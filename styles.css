@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+  --main-mono: "Roboto Mono", "Courier New", monospace;
+}
+
+body {
+  font-family: var(--main-mono);
+  font-weight: 400;
+  background-color: aliceblue;
+  background-size: 250px 300px;
+}
+
+nav {
+  text-align: center;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2em;
+}
+
+h2 {
+  text-decoration: underline;
+  font-size: 1.4em;
+}
+
+h3 {
+  text-align: center;
+}
+
+a:link, a:visited {
+  color: black;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: white;
+  background-color: steelblue;
+}
+
+a:active {
+  background-color: black;
+}
+
+#container {
+  width: 90%;
+  margin: auto;
+  max-width: 1440px;
+}
+
+#box {
+  width: 90%;
+  margin: auto;
+  max-width: 1440px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+  border-radius: 50px;
+}
+
+article {
+  width: 75%;
+}
+
+@media (min-width: 20em) {
+  img {
+    float: left;
+    margin-right: 1em;
+  }
+}
+
+@media (min-width: 50em) {
+  p {
+    grid-area: c;
+  }
+
+  h2 {
+    grid-area: b;
+  }
+
+  img {
+    float: none;
+    grid-area: a;
+  }
+
+  #container {
+    display: grid;
+    grid-template-columns: minmax(200px, 2r);
+    gap: 2em;
+    grid-template-areas:
+      "a b"
+      ". c";
+  }
+
+  #box {
+    display: grid;
+    grid-template-columns: minmax(200px, 2r);
+    gap: 2em;
+    grid-template-areas:
+      "a c"
+      "a c"
+      "a c";
+  }
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: #111111;
+    color: white;
+  }
+
+  a:link, a:visited {
+    color: white;
+  }
+
+  a:hover {
+    color: white;
+  }
+
+  a:active {
+    color: white;
+  }
+}
